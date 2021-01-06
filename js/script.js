@@ -2,7 +2,7 @@ const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
 let isjumping = false;
 let position = 0;
-//ljk
+
 function handlekeyup(event) {
     if (event.keyCode === 32) {
         if(!isjumping){
@@ -39,7 +39,6 @@ function jump() {
     },20);
 }
 
-
 function createCactus() {
     const cactus = document.createElement('div');
     let cactusPosition = 1000;
@@ -69,5 +68,3 @@ function createCactus() {
 
 createCactus();
 document.addEventListener('keyup', handlekeyup);
-
-//l j k
