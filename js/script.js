@@ -1,6 +1,7 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
 let isjumping = false;
+let position = 0;
 //ljk
 function handlekeyup(event) {
     if (event.keyCode === 32) {
@@ -11,8 +12,6 @@ function handlekeyup(event) {
 }
 
 function jump() {
-    let position = 0;
-
     isjumping = true;
 
     let upInterval = setInterval(() => {
@@ -55,7 +54,11 @@ function createCactus() {
             clearInterval(leftInterval);
             background.removeChild(cactus);
         }
-        else {
+        else if(cactusPosition > 0 && cactusPosition < 60 && position < 60){
+            clearInterval(leftInterval);
+            document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+        }        
+        else{
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';
         }
